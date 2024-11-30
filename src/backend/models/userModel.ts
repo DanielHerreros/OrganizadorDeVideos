@@ -1,8 +1,8 @@
 import { QueryResult } from "pg";
 import pool from "../config/configDb.js";
 import { ApiResult } from "../types/ApiResult.js";
-import { User } from "../types/User.js";
-
+// Corrected the import statement for User to match the file name case
+import { User } from "../types/user.js";
 
 export async function saveNewUser(user:User):Promise<QueryResult>{
 

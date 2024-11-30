@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="/src/frontend/validateVideoForm.js"></script>
+    <title>Subir Video</title>
+</head>
+<body>
+    <h1>Subir Video</h1>
+    <form action="/api/v1/videos" method="POST" enctype="multipart/form-data" id="videoForm">
+        <p>
+            <label for="title-field">Título del Video</label>
+            <input type="text" id="title-field" name="title" required>
+        </p>
+        <p>
+            <label for="description-field">Descripción</label>
+            <input type="text" id="description-field" name="description" required>
+        </p>
+        <p>
+            <label for="file-path">Archivo de Video</label>
+            <input type="file" id="file-path" name="videoFile" accept="video/*" required>
+        </p>
+        <p>
+            <button type="submit">Subir Video</button>    
+        </p>
+    </form>
+</body>
+</html>

@@ -1,10 +1,9 @@
 import { argon2Config } from "../config/configData.js";
 import { deleteUserById, findUserById, getUsers, saveNewUser, updateUserById } from "../models/userModel.js";
 import { ApiResult } from "../types/ApiResult.js";
-import { User } from "../types/User.js";
+import { User } from "../types/user.js";
 import { ApiResultGenerator } from "../utils/ApiResultGenerator.js";
 import argon2 from 'argon2';
-
 
 export async function newUser(user: User):Promise<ApiResult>{
     let apiResult: ApiResult; 
