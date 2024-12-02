@@ -7,8 +7,13 @@ import { isAdmin } from '../middlewares/isAdmin.js';
 
 const staticRouter = Express.Router();
 
-staticRouter.get('/newUser',isLoggedIn, isAdmin, (req: Express.Request, res: Express.Response) => {
+staticRouter.get('/newUser', (req: Express.Request, res: Express.Response) => {
     const targetFilePath = path.join(publicPath, "/newUser.html");
+    res.sendFile(targetFilePath);
+});
+
+staticRouter.get('/newVideo', (req: Express.Request, res: Express.Response) => {
+    const targetFilePath = path.join(publicPath, "/newVideo.html");
     res.sendFile(targetFilePath);
 });
 

@@ -16,5 +16,3 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.querySelector("#userForm")?.setAttribute("action", `/api/v1/users/${id}`);
     }
 });
-
-

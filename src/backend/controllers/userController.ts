@@ -9,8 +9,11 @@ export async function newUser(user: User):Promise<ApiResult>{
     let apiResult: ApiResult; 
     user.password = await argon2.hash(user.password, argon2Config);   
     try{
+        console.log(user);
         const result = await saveNewUser(user);
+        console.log(result);
         apiResult =  ApiResultGenerator.postResult(result);
+        console.log(apiResult);
     }  catch (error) {
         if (error instanceof Error) {
             apiResult =  ApiResultGenerator.postResult(error);

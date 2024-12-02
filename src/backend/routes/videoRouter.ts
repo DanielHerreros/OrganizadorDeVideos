@@ -7,7 +7,6 @@ import { isAdmin } from '../middlewares/isAdmin.js';
 import { validateNumericParams } from '../middlewares/validateNumericParams.js';
 import { verifyToken } from '../middlewares/verifyToken.js';
 
-
 const videoRouter = Express.Router();
 
 videoRouter.use(verifyToken);

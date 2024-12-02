@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="/src/frontend/validateUserForm.js"></script>
+    <link rel="stylesheet" href="styles/stylehome.css">
     <title>Registro de usuario</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <button onclick="location.href='home.html'">Inicio</button>
+            <button onclick="location.href='newVideo.html'">Subir Video</button>
+            <button onclick="location.href='usersManagement.html'">Gestión de Usuarios</button>
+            <button onclick="location.href='updateUser.html'">Actualizar Usuario</button>
+        </nav>
+    </header>
     <form action="/api/v1/users" method="POST" id="userForm">
         <p>
             <label for="name-field">Nombre: </label>

@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="/src/frontend/validateVideoForm.js"></script>
+    <link rel="stylesheet" href="styles/stylehome.css">
     <title>Subir Video</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <button onclick="location.href='home.html'">Inicio</button>
+            <button onclick="location.href='newUser.html'">Registrar Usuario</button>
+            <button onclick="location.href='usersManagement.html'">Gestión de Usuarios</button>
+            <button onclick="location.href='updateUser.html'">Actualizar Usuario</button>
+        </nav>
+    </header>
     <h1>Subir Video</h1>
     <form action="/api/v1/videos" method="POST" enctype="multipart/form-data" id="videoForm">
         <p>

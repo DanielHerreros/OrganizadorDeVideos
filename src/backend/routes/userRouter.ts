@@ -18,7 +18,8 @@ userRouter.get("/:id", isLoggedIn, validateNumericParams, async (req: Express.Re
     res.status(result.statusCode).json(result.data);
   });
  
-userRouter.post("/", isLoggedIn, isAdmin, async (req: Express.Request, res: Express.Response) => {
+//userRouter.post("/", isLoggedIn, isAdmin, async (req: Express.Request, res: Express.Response) => {
+  userRouter.post("/", async (req: Express.Request, res: Express.Response) => {
     const user: User = {userName: req.body.username, name: req.body.name, first_surname: req.body.surname, email: req.body.email, password: req.body.password};
     const result: ApiResult = await newUser(user);
     res.status(result.statusCode).json({message: result.message});
