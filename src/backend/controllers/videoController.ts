@@ -6,6 +6,7 @@ import { ApiResultGenerator } from "../utils/ApiResultGenerator.js";
 
 export async function newVideo(video: Video): Promise<ApiResult> {
     let apiResult: ApiResult;
+    console.log("revision controller",video);
     try {
         const result = await saveNewVideo(video);
         apiResult = ApiResultGenerator.postResult(result);

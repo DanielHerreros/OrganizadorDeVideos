@@ -20,7 +20,9 @@ videoRouter.get("/:id", isLoggedIn, validateNumericParams, async (req: Express.R
     const result: ApiResult = await getVideo(req.params.id);
     res.status(result.statusCode).json(result.data);
 });
-videoRouter.post("/", isLoggedIn, isAdmin, async (req: Express.Request, res: Express.Response) => {
+//videoRouter.post("/", isLoggedIn, isAdmin, async (req: Express.Request, res: Express.Response) => {
+videoRouter.post("/", async (req: Express.Request, res: Express.Response) => {
+    console.log("revision router", {title: req.body.title, description: req.body.description, videoUrl: req.body.videoFile});
     const userId = (req as any).userId;
     const video: Video = {userId: userId, title: req.body.title, description: req.body.description, videoUrl: req.body.videoFile};
     const result: ApiResult = await newVideo(video);

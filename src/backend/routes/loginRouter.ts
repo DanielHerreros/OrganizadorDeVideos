@@ -10,8 +10,10 @@ loginRouter.post('/', async (req: Express.Request, res: Express.Response) => {
   
   if (result.success) {
     if (result.data?.[0] && 'role' in result.data[0]) {
+      console.log(result.data);
       req.session.userName = user.userName;
       req.session.role = result.data[0].role as string;
+//      req.session.userId = result.data[0].id as string;
     }
     return res.redirect('/home.html');
   }

@@ -8,9 +8,6 @@ export async function saveNewUser(user:User):Promise<QueryResult>{
 
         const queryString = `INSERT INTO "user" ("userName", "name", "first_surname", "password", "email") VALUES ($1, $2, $3, $4, $5)`;
         const values = [user.userName, user.name, user.first_surname, user.password, user.email];
-        console.log(queryString,values);
-        console.log(user);
-        console.log(pool);
         const result = await pool.query(queryString, values);
         return result;
    

@@ -4,7 +4,8 @@ import { ApiResult } from "../types/ApiResult.js";
 import { Video } from "../types/Video.js";
 
 export async function saveNewVideo(video: Video): Promise<QueryResult> {
-    const queryString = `INSERT INTO "videos" ("title", "description", "file_path") VALUES ($1, $2, $3)`;
+    console.log("revision model",video);
+    const queryString = `INSERT INTO "videos" ("title", "description", "video_url") VALUES ($1, $2, $3)`;
     const values = [video.title, video.description, video.videoUrl];
     const result = await pool.query(queryString, values);
     return result;

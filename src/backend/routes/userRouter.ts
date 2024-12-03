@@ -22,7 +22,11 @@ userRouter.get("/:id", isLoggedIn, validateNumericParams, async (req: Express.Re
   userRouter.post("/", async (req: Express.Request, res: Express.Response) => {
     const user: User = {userName: req.body.username, name: req.body.name, first_surname: req.body.surname, email: req.body.email, password: req.body.password};
     const result: ApiResult = await newUser(user);
-    res.status(result.statusCode).json({message: result.message});
+    if (result.statusCode==201){
+      res.redirect("http://localhost:3000/newUserOk.html");
+    } else {
+      res.status(result.statusCode).json({message: result.message});
+    }
 });
 
 userRouter.delete("/:id", isLoggedIn, isAdmin, validateNumericParams, async (req: Express.Request, res: Express.Response) => {  
@@ -38,7 +42,6 @@ userRouter.put("/:id", isLoggedIn, validateNumericParams, async (req: Express.Re
   } else {
     res.status(result.statusCode).json({message: result.message});
   }
- 
 });
 
 export default userRouter;
